@@ -1,0 +1,79 @@
+proxies:
+  - name: femboy01 SSL 443
+    server: sgdo.rcvpn.net
+    port: 443
+    type: vmess
+    uuid: 76450adc-8dff-4a74-8c47-af8413dee25a
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /v2ray
+      headers:
+        Host: media.fcgk35-1.fna.whatsapp.net
+    udp: true
+    _index: 0
+  - name: femboy01 WS 80
+    server: 104.18.20.226
+    port: 80
+    type: vmess
+    uuid: 76450adc-8dff-4a74-8c47-af8413dee25a
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /v2ray
+      headers:
+        Host: sgdo.rcvpn.net
+    udp: true
+  - name: Linode Japan WS 80
+    server: 172.64.149.82
+    port: 80
+    type: vmess
+    uuid: 7439e647-24a0-48b2-9031-a34071b41117
+    alterId: 0
+    cipher: auto
+    tls: false
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: jp.vmess2.xservs.xyz
+    udp: true
+  - name: Linode Japan SSL 443
+    server: jp.vmess2.xservs.xyz
+    port: 443
+    type: vmess
+    uuid: 7439e647-24a0-48b2-9031-a34071b41117
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    ws-opts:
+      path: /vmess
+      headers:
+        Host: media.fcgk35-1.fna.whatsapp.net
+    udp: true
+proxy-groups:
+  - name: v2ray
+    proxies:
+      - femboy01 SSL 443
+      - femboy01 WS 80
+    type: select
+  - name: GeForce NOW
+    proxies:
+      - Linode Japan WS 80
+      - Linode Japan SSL 443
+    type: select
+rules:
+  - DOMAIN-SUFFIX,nvidia.com,GeForce NOW
+  - DOMAIN-SUFFIX,geforcenow.com,GeForce NOW
+  - DOMAIN-SUFFIX,nvidiagrid.net,GeForce NOW
+  - DOMAIN-SUFFIX,games.geforce.com,GeForce NOW
+  - MATCH,v2ray
