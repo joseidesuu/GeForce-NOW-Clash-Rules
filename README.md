@@ -10,7 +10,9 @@ to separate traffic for geforce now in clash so that you can play cloud gaming w
  use "," for proxy or group
   eg: - DOMAIN-SUFFIX,nvidiagrid.net,GeForce NOW
   
-to add rules in clash for windows
+**How to add rules in clash for windows**
+
+note: make sure the mode you choose is rule
 1. Go to "Profiles"
 2. Select the profile you are currently using
 3. Right click then select "Rules"
