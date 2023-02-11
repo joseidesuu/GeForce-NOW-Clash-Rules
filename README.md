@@ -15,5 +15,6 @@ to add rules in clash for windows
 2. Select the profile you are currently using
 3. Right click then select "Rules"
 4. Click "add"
-5. "Create a new rule" will appear and you select DOMAIN-SUFFIX and enter the domain you want to set as a proxy or group
-6. Then click "add"
+5. "Create a new rule" will appear and you select DOMAIN-SUFFIX and enter the domain
+6. Scroll down and select proxies or groups
+7. Then click "add"
